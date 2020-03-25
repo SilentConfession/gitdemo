@@ -24,3 +24,22 @@ for i in range(len(word)):
         pl[int(word[i-1])]+= -1
     elif word[i]=='p' and pl[0]==1:
         pl[0]=0
+
+choice= input() #输入待选十七张牌
+for i in range(len(choice)):
+    if ml==w or sl==w or pl==w: #每摸一次牌均进行一次判断：三个需求列表是否有任一个所有元素为零（满足胡牌条件)
+        l.append(i) #如是，将当前索引值加入列表，并离开循环（停止摸牌）
+        break
+    else:
+        if choice[i]=='m' and ml[int(choice[i-1])]!=0:  #继续摸牌，进行与对初始十三张相似的操作
+            ml[int(choice[i-1])]+= -1
+        elif choice[i]=='m' and ml[0]==1:
+            ml[0]=0
+        elif choice[i]=='s' and sl[int(choice[i-1])]!=0:
+            sl[int(choice[i-1])]+= -1
+        elif choice[i]=='s' and sl[0]==1:
+            sl[0]=0
+        elif choice[i]=='p'and pl[int(choice[i-1])]!=0:
+            pl[int(choice[i-1])]+= -1
+        elif choice[i]=='p' and pl[0]==1:
+            pl[0]=0
