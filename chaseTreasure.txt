@@ -43,3 +43,11 @@ for i in range(len(choice)):
             pl[int(choice[i-1])]+= -1
         elif choice[i]=='p' and pl[0]==1:
             pl[0]=0
+
+if len(l)==0:   #循环完成后，有两种情况
+    if ml==w or sl==w or pl==w: #其一，摸最后一张牌胡牌，故再进行一次判断
+        print(17)   #判断为真则直接输出十七
+    else:   #其二，没有胡牌可能
+        print('Stop Your Daydream!')
+else:   #列表中已有数据，按照其与牌次序关系对数据进行处理，输出所需数据
+    print(int((l[0]+1)/2))
